@@ -6,7 +6,7 @@ class LoginPage(Page):
     SIGN_IN_LINK = (By.CSS_SELECTOR, '.sing-in-text')
     SIGNIN_INPUT_EMAIL = (By.ID, "email-2")
     PASSWORD_INPUT = (By.ID, "field")
-    CONTINUE_BUTTON = (By.CSS_SELECTOR, '.login-button.w-button')
+    CONTINUE_BUTTON = (By.XPATH, "//a[@class='login-button w-button']")
 
 
     def login_pages(self):
@@ -14,7 +14,7 @@ class LoginPage(Page):
 
 
     def click_on_signin_link(self):
-        self.click(*self.SIGN_IN_LINK)
+        self.wait_for_element_clickable_click(*self.SIGN_IN_LINK)
 
 
     def input_email(self,text):
@@ -26,4 +26,4 @@ class LoginPage(Page):
 
 
     def click_continue_button(self):
-        self.click(*self.CONTINUE_BUTTON)
+        self.wait_for_element_clickable_click(*self.CONTINUE_BUTTON)

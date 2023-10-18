@@ -13,20 +13,22 @@ def browser_init(context):
     """
     :param context: Behave context
     """
-
-    service = Service(executable_path='/Users/balamurugann/Downloads/Internshp-Project/chromedriver')
-    context.driver = webdriver.Chrome(service=service)
-    context.driver.maximize_window()
-    ### OTHER BROWSERS ###
-    # service = Service(executable_path='/Users/balamurugann/Automation_QA/sb_python-automation/geckodriver')
-    # context.driver = webdriver.Firefox(service=service)
+    #
+    # service = Service(executable_path='/Users/balamurugann/Downloads/Internshp-Project/chromedriver')
+    # context.driver = webdriver.Chrome(service=service)
+    # context.driver.maximize_window()
+    # # ### OTHER BROWSERS ###
+    service = Service(executable_path='/Users/balamurugann/Downloads/Internshp-Project/geckodriver')
+    context.driver = webdriver.Firefox(service=service)
     # context.driver = webdriver.Safari()
 
     # HEADLESS MODE ####
     # options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
-    # service = Service(executable_path='/Users/balamurugann/Automation_QA/sb_python-automation/chromedriver')
+    #
+    # service = Service(executable_path='/Users/balamurugann/Downloads/Internshp-Project/chromedriver')
     # context.driver = webdriver.Chrome(options=options, service=service)
+    # context.driver.set_window_size(1920,1080)
 
     ## BROWSERSTACK ###
     # # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settingspip3 install -r requirements.txt
@@ -49,8 +51,8 @@ def browser_init(context):
     # context.driver = webdriver.Remote(command_executor=url, options=options)
 
     # context.driver.maximize_window()
-    context.driver.implicitly_wait(4)
-    context.driver.wait = WebDriverWait(context.driver, 10)
+    context.driver.implicitly_wait(10)
+    context.driver.wait = WebDriverWait(context.driver, 15)
 
     context.app = Application(context.driver)
 

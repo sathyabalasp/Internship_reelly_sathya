@@ -80,6 +80,17 @@ class Page:
             message=f'Element did not appear: {locator}'
         )
 
+    def wait_for_element_appear_click(self, *locator):
+
+        e = self.wait.until(
+            EC.visibility_of_element_located(locator),
+            message=f'Element did not appear: {locator}')
+        wait = WebDriverWait(self.driver, 10)
+        e.click()
+
+
+
+
     def wait_for_element_disappear(self, *locator):
         self.wait.until(
             EC.invisibility_of_element_located(locator))

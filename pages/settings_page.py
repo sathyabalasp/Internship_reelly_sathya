@@ -5,4 +5,4 @@ class SettingsPage(Page):
     SUBSCRIPTION_AND_PAYMENT_BUTTON =(By.CSS_SELECTOR,'a[href="/subscription"]')
 
     def click_subscription_and_payments(self):
-        self.click(*self.SUBSCRIPTION_AND_PAYMENT_BUTTON)
+        self.wait_for_element_clickable_click(*self.SUBSCRIPTION_AND_PAYMENT_BUTTON)
