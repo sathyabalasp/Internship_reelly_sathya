@@ -10,3 +10,6 @@ Feature: User can open Subscription & payments page in Reelly webpage
     Then Verify title of Subscription & payments is visible
      And Verify <- Back button back are available
      And Verify Upgrade plan are available
+
+
+    
